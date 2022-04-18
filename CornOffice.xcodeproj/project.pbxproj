@@ -15,6 +15,8 @@
 		E5F3D851280D97C8007AF7A1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D850280D97C8007AF7A1 /* LoginView.swift */; };
 		E5F3D854280DA2F4007AF7A1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D853280DA2F4007AF7A1 /* Utilities.swift */; };
 		E5F3D856280DA5D4007AF7A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5F3D855280DA5D3007AF7A1 /* GoogleService-Info.plist */; };
+		E5F3D858280DA8A0007AF7A1 /* ButtonAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D857280DA8A0007AF7A1 /* ButtonAnimations.swift */; };
+		E5F3D85A280DA969007AF7A1 /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D859280DA969007AF7A1 /* TextFieldValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		E5F3D850280D97C8007AF7A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E5F3D853280DA2F4007AF7A1 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		E5F3D855280DA5D3007AF7A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E5F3D857280DA8A0007AF7A1 /* ButtonAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimations.swift; sourceTree = "<group>"; };
+		E5F3D859280DA969007AF7A1 /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,6 @@
 				C0508754BA3B18C68F8C390E /* Pods-CornOffice.debug.xcconfig */,
 				C16C23AC866E61CF41C135CB /* Pods-CornOffice.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -97,6 +100,7 @@
 		E5E84E4F280D96340013F5EC /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
+				E5F3D859280DA969007AF7A1 /* TextFieldValidator.swift */,
 				E5F3D850280D97C8007AF7A1 /* LoginView.swift */,
 				E5E84E3F280D8D220013F5EC /* LoginController.swift */,
 			);
@@ -115,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				E5F3D853280DA2F4007AF7A1 /* Utilities.swift */,
+				E5F3D857280DA8A0007AF7A1 /* ButtonAnimations.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -234,9 +239,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5F3D858280DA8A0007AF7A1 /* ButtonAnimations.swift in Sources */,
 				E5F3D851280D97C8007AF7A1 /* LoginView.swift in Sources */,
 				E5E84E40280D8D220013F5EC /* LoginController.swift in Sources */,
 				E5F3D854280DA2F4007AF7A1 /* Utilities.swift in Sources */,
+				E5F3D85A280DA969007AF7A1 /* TextFieldValidator.swift in Sources */,
 				E5E84E3C280D8D220013F5EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

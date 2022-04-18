@@ -36,6 +36,10 @@ class LoginView: UIView {
         
         label.textColor = .red
         label.text = "Invalid login or password!"
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+//        label.sizeToFit()
+        label.textAlignment = .center
         
         return label
     }()
@@ -133,8 +137,8 @@ class LoginView: UIView {
         NSLayoutConstraint.activate([
             warningLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 10),
             warningLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -10),
-            warningLabel.topAnchor.constraint(equalTo: loginLabel.bottomAnchor, constant: 20),
-            warningLabel.heightAnchor.constraint(equalToConstant: 20)
+            warningLabel.topAnchor.constraint(equalTo: loginLabel.bottomAnchor, constant: 10),
+            warningLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
         
         NSLayoutConstraint.activate([
