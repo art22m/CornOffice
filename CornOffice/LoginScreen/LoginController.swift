@@ -55,18 +55,24 @@ class LoginController: UIViewController {
         loginView.warningLabel.isHidden = true
         guard let email = loginView.emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
         guard let password = loginView.passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-                
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            if let error = error {
-                self.loginView.warningLabel.text = error.localizedDescription
-                self.loginView.warningLabel.isHidden = false
-                sender.shake()
-                return
-            }
-            
+        
+//        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+//            if let error = error {
+//                self.loginView.warningLabel.text = error.localizedDescription
+//                self.loginView.warningLabel.isHidden = false
+//                sender.shake()
+//                return
+//            }
+//
             sender.pulsate()
-            self.loginView.warningLabel.isHidden = true
-        }
+            self.presentMainScreen()
+//            self.loginView.warningLabel.isHidden = true
+//        }
+    }
+    
+    private func presentMainScreen() {
+        let tabBarVC = TabBarViewController()
+        self.present(tabBarVC, animated: true)
     }
     
 }

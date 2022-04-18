@@ -38,6 +38,7 @@ PODS:
   - GoogleUtilities/Reachability (7.5.2):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.7.0)
+  - MercariQRScanner (1.9.0)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
@@ -47,6 +48,7 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/Auth
+  - MercariQRScanner
 
 SPEC REPOS:
   trunk:
@@ -57,6 +59,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
+    - MercariQRScanner
     - nanopb
     - PromisesObjC
 
@@ -68,9 +71,10 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 85fd18ff3019bb85d3f2c551d04c481dedf71fc9
   GoogleUtilities: 8de2a97a17e15b6b98e38e8770e2d129a57c0040
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
+  MercariQRScanner: e5aea873969af59b09b4cc411fc1c5b6293dba44
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: 6e4c7411b16700971c8caaa365ad052017df4d27
+PODFILE CHECKSUM: 0968a689259d74633a5dae053ae60fdb6e3e4edd
 
 COCOAPODS: 1.11.2

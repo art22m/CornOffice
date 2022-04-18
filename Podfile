@@ -7,5 +7,6 @@ target 'CornOffice' do
 
   # Pods for CornOffice
   pod 'Firebase/Auth'
+  pod 'MercariQRScanner'
 
 end

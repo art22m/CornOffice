@@ -24,7 +24,7 @@ class LoginView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Login Account"
         label.textColor = .black
-        label.font = UIFont(name:"ArialRoundedMTBold", size: 25.0)
+        label.font = .systemFont(ofSize: 25, weight: .bold)
         label.textAlignment = .center
         
         return label
@@ -142,15 +142,15 @@ class LoginView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            emailTextField.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 10),
-            emailTextField.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -10),
+            emailTextField.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 15),
+            emailTextField.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -15),
             emailTextField.topAnchor.constraint(equalTo: warningLabel.bottomAnchor, constant: 25),
             emailTextField.heightAnchor.constraint(equalToConstant: 40)
         ])
         
         NSLayoutConstraint.activate([
-            passwordTextField.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 10),
-            passwordTextField.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -10),
+            passwordTextField.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 15),
+            passwordTextField.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -15),
             passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
             passwordTextField.heightAnchor.constraint(equalToConstant: 40)
         ])
