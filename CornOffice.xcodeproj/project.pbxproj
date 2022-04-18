@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E5E84E3C280D8D220013F5EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E84E3B280D8D220013F5EC /* AppDelegate.swift */; };
-		E5E84E3E280D8D220013F5EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E84E3D280D8D220013F5EC /* SceneDelegate.swift */; };
 		E5E84E40280D8D220013F5EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E84E3F280D8D220013F5EC /* ViewController.swift */; };
-		E5E84E43280D8D220013F5EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E84E41280D8D220013F5EC /* Main.storyboard */; };
 		E5E84E45280D8D240013F5EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E84E44280D8D240013F5EC /* Assets.xcassets */; };
 		E5E84E48280D8D240013F5EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E84E46280D8D240013F5EC /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,9 +16,7 @@
 /* Begin PBXFileReference section */
 		E5E84E38280D8D220013F5EC /* CornOffice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CornOffice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E84E3B280D8D220013F5EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E5E84E3D280D8D220013F5EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E5E84E3F280D8D220013F5EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E5E84E42280D8D220013F5EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5E84E44280D8D240013F5EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5E84E47280D8D240013F5EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5E84E49280D8D240013F5EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,9 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				E5E84E3B280D8D220013F5EC /* AppDelegate.swift */,
-				E5E84E3D280D8D220013F5EC /* SceneDelegate.swift */,
 				E5E84E3F280D8D220013F5EC /* ViewController.swift */,
-				E5E84E41280D8D220013F5EC /* Main.storyboard */,
 				E5E84E44280D8D240013F5EC /* Assets.xcassets */,
 				E5E84E46280D8D240013F5EC /* LaunchScreen.storyboard */,
 				E5E84E49280D8D240013F5EC /* Info.plist */,
@@ -127,7 +121,6 @@
 			files = (
 				E5E84E48280D8D240013F5EC /* LaunchScreen.storyboard in Resources */,
 				E5E84E45280D8D240013F5EC /* Assets.xcassets in Resources */,
-				E5E84E43280D8D220013F5EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,21 +133,12 @@
 			files = (
 				E5E84E40280D8D220013F5EC /* ViewController.swift in Sources */,
 				E5E84E3C280D8D220013F5EC /* AppDelegate.swift in Sources */,
-				E5E84E3E280D8D220013F5EC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E5E84E41280D8D220013F5EC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E5E84E42280D8D220013F5EC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E5E84E46280D8D240013F5EC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +276,7 @@
 				INFOPLIST_FILE = CornOffice/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +304,7 @@
 				INFOPLIST_FILE = CornOffice/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
