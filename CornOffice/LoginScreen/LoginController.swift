@@ -15,9 +15,14 @@ class LoginController: UIViewController {
         
         // Setup view
         self.view = loginView
-        
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        
+        Utilities.styleTextField(loginView.emailTextField)
+        Utilities.styleTextField(loginView.passwordTextField)
+    }
 
 }
 

@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7D6B5947C74C888EE0824E7 /* Pods_CornOffice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DAE70FC39FE31A57405D83 /* Pods_CornOffice.framework */; };
 		E5E84E3C280D8D220013F5EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E84E3B280D8D220013F5EC /* AppDelegate.swift */; };
 		E5E84E40280D8D220013F5EC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E84E3F280D8D220013F5EC /* LoginController.swift */; };
 		E5E84E45280D8D240013F5EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E84E44280D8D240013F5EC /* Assets.xcassets */; };
 		E5E84E48280D8D240013F5EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E84E46280D8D240013F5EC /* LaunchScreen.storyboard */; };
 		E5F3D851280D97C8007AF7A1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D850280D97C8007AF7A1 /* LoginView.swift */; };
+		E5F3D854280DA2F4007AF7A1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D853280DA2F4007AF7A1 /* Utilities.swift */; };
+		E5F3D856280DA5D4007AF7A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5F3D855280DA5D3007AF7A1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34DAE70FC39FE31A57405D83 /* Pods_CornOffice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CornOffice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0508754BA3B18C68F8C390E /* Pods-CornOffice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CornOffice.debug.xcconfig"; path = "Target Support Files/Pods-CornOffice/Pods-CornOffice.debug.xcconfig"; sourceTree = "<group>"; };
+		C16C23AC866E61CF41C135CB /* Pods-CornOffice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CornOffice.release.xcconfig"; path = "Target Support Files/Pods-CornOffice/Pods-CornOffice.release.xcconfig"; sourceTree = "<group>"; };
 		E5E84E38280D8D220013F5EC /* CornOffice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CornOffice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E84E3B280D8D220013F5EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5E84E3F280D8D220013F5EC /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -22,6 +28,8 @@
 		E5E84E47280D8D240013F5EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5E84E49280D8D240013F5EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5F3D850280D97C8007AF7A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E5F3D853280DA2F4007AF7A1 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		E5F3D855280DA5D3007AF7A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D6B5947C74C888EE0824E7 /* Pods_CornOffice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6535BB2700F35E2DB9BB516E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34DAE70FC39FE31A57405D83 /* Pods_CornOffice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D555C7903DDD15A98E18F7A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C0508754BA3B18C68F8C390E /* Pods-CornOffice.debug.xcconfig */,
+				C16C23AC866E61CF41C135CB /* Pods-CornOffice.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E5E84E2F280D8D220013F5EC = {
 			isa = PBXGroup;
 			children = (
 				E5E84E3A280D8D220013F5EC /* CornOffice */,
 				E5E84E39280D8D220013F5EC /* Products */,
+				D555C7903DDD15A98E18F7A2 /* Pods */,
+				6535BB2700F35E2DB9BB516E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,10 +83,12 @@
 		E5E84E3A280D8D220013F5EC /* CornOffice */ = {
 			isa = PBXGroup;
 			children = (
+				E5F3D852280DA2D1007AF7A1 /* Helpers */,
 				E5E84E4F280D96340013F5EC /* LoginScreen */,
 				E5E84E3B280D8D220013F5EC /* AppDelegate.swift */,
 				E5E84E50280D963F0013F5EC /* Supporting Files */,
 				E5E84E49280D8D240013F5EC /* Info.plist */,
+				E5F3D855280DA5D3007AF7A1 /* GoogleService-Info.plist */,
 				E5E84E44280D8D240013F5EC /* Assets.xcassets */,
 			);
 			path = CornOffice;
@@ -80,6 +111,14 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E5F3D852280DA2D1007AF7A1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E5F3D853280DA2F4007AF7A1 /* Utilities.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,9 +126,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5E84E4C280D8D240013F5EC /* Build configuration list for PBXNativeTarget "CornOffice" */;
 			buildPhases = (
+				900B2091438BB5DEBA1D7E1A /* [CP] Check Pods Manifest.lock */,
 				E5E84E34280D8D220013F5EC /* Sources */,
 				E5E84E35280D8D220013F5EC /* Frameworks */,
 				E5E84E36280D8D220013F5EC /* Resources */,
+				6CB9A742FA34E2F02DFF2BBF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,10 +181,53 @@
 			files = (
 				E5E84E48280D8D240013F5EC /* LaunchScreen.storyboard in Resources */,
 				E5E84E45280D8D240013F5EC /* Assets.xcassets in Resources */,
+				E5F3D856280DA5D4007AF7A1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6CB9A742FA34E2F02DFF2BBF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CornOffice/Pods-CornOffice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CornOffice/Pods-CornOffice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CornOffice/Pods-CornOffice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		900B2091438BB5DEBA1D7E1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CornOffice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E5E84E34280D8D220013F5EC /* Sources */ = {
@@ -152,6 +236,7 @@
 			files = (
 				E5F3D851280D97C8007AF7A1 /* LoginView.swift in Sources */,
 				E5E84E40280D8D220013F5EC /* LoginController.swift in Sources */,
+				E5F3D854280DA2F4007AF7A1 /* Utilities.swift in Sources */,
 				E5E84E3C280D8D220013F5EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +371,7 @@
 		};
 		E5E84E4D280D8D240013F5EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0508754BA3B18C68F8C390E /* Pods-CornOffice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -314,6 +400,7 @@
 		};
 		E5E84E4E280D8D240013F5EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C16C23AC866E61CF41C135CB /* Pods-CornOffice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
