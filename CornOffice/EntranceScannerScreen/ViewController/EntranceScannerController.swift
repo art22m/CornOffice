@@ -26,6 +26,7 @@ class EntranceScannerController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupQRScanner()
+        setupBackgroundImage()
     }
     
     // MARK: - QR Scanner Settings
@@ -46,6 +47,14 @@ class EntranceScannerController: UIViewController {
                 showAlert()
         }
     }
+    
+    private func setupBackgroundImage() {
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "qr_entrance_screen")
+        backgroundImage.contentMode = .scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+    }
+    
     
     private func setupQRScannerView() {
         let qrScannerView = QRScannerView(frame: view.bounds)
@@ -74,20 +83,18 @@ extension EntranceScannerController: QRScannerViewDelegate {
     }
 
     func qrScannerView(_ qrScannerView: QRScannerView, didSuccess code: String) {
-        print(code)
+        entranceManager.entranceRequest(with: EntranceModel(key: Int(code) ?? 0, email: "s.v@mail.ru"))
     }
 }
 
 // MARK: - EntranceManagerDelegate
 
 extension EntranceScannerController: EntranceManagerDelegate {
-    func didConnectSuccessfully(_ entranceManager: EntranceManager) {
+    func didConnectSuccessfully() {
         print("succesful enter")
     }
     
-    func didFailWithError(error: Error) {
-        let alert = UIAlertController(title: "Entrance error", message: "Please, try again", preferredStyle: .alert)
-        alert.addAction(.init(title: "Retry", style: .default))
-        self.present(alert, animated: true)
+    func didFailWithError() {
+        print("error")
     }
 }

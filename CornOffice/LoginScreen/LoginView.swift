@@ -38,7 +38,7 @@ class LoginView: UIView {
         label.text = "Invalid login or password!"
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-//        label.sizeToFit()
+        //        label.sizeToFit()
         label.textAlignment = .center
         
         return label
@@ -164,21 +164,21 @@ class LoginView: UIView {
     }
     
     @objc private func dismissKeyboard() {
-            endEditing(true)
-        }
+        endEditing(true)
+    }
 }
 
 extension LoginView : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            switch (textField) {
-                case emailTextField:
-                    emailTextField.resignFirstResponder()
-                    passwordTextField.becomeFirstResponder()
-                case passwordTextField:
-                    passwordTextField.resignFirstResponder()
-                default:
-                    break
-            }
+        switch (textField) {
+            case emailTextField:
+                emailTextField.resignFirstResponder()
+                passwordTextField.becomeFirstResponder()
+            case passwordTextField:
+                passwordTextField.resignFirstResponder()
+            default:
+                break
+        }
         return true
     }
 }

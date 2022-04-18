@@ -18,6 +18,8 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.presentMainScreen()
+        
         // Setup view
         self.view = loginView
         

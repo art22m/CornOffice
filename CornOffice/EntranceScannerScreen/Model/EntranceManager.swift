@@ -8,16 +8,16 @@
 import Foundation
 
 protocol EntranceManagerDelegate {
-    func didConnectSuccessfully(_ entranceManager: EntranceManager)
-    func didFailWithError(error: Error)
+    func didConnectSuccessfully()
+    func didFailWithError()
 }
 
 struct EntranceManager {
     var delegate: EntranceManagerDelegate?
     
     func entranceRequest(with entranceModel: EntranceModel) {
-        guard let url = URL(string: "") else { return }
-        
+        guard let url = URL(string: "https://beecoder-qr-code-entrance.herokuapp.com/login") else { return }
+        print(entranceModel)
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
@@ -26,18 +26,30 @@ struct EntranceManager {
             request.httpBody = requestBody
             request.addValue("application/json", forHTTPHeaderField: "content-type")
         } catch {
-            self.delegate?.didFailWithError(error: error)
+            self.delegate?.didFailWithError()
         }
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                self.delegate?.didFailWithError(error: error)
-                return
+            if let data = data {
+                let response = parseResponse(for: data)
+                if (response == 200) {
+                    delegate?.didConnectSuccessfully()
+                } else {
+                    delegate?.didFailWithError()
+                }
             }
-            
-            self.delegate?.didConnectSuccessfully(self)
         }
         
         task.resume()
+    }
+    
+    private func parseResponse(for data: Data) -> Int {
+        do {
+            let decodedData = try JSONDecoder().decode(EntranceResponse.self, from: data)
+            print(decodedData)
+            return decodedData.status
+        } catch {
+            return 400
+        }
     }
 }

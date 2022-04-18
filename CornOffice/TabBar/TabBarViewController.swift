@@ -12,7 +12,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let sensorsVC = SensorsController()
+        let sensorsVC = UINavigationController(rootViewController: SensorsListController())
         sensorsVC.title = "Sensors"
         
         let entranceScannerVC = EntranceScannerController()

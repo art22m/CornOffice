@@ -8,6 +8,11 @@
 import Foundation
 
 struct EntranceModel: Encodable {
-    let entranceCode: String
+    let key: Int
     let email: String
+}
+
+struct EntranceResponse: Decodable {
+    let status: Int
+    let key: Int
 }
