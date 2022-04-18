@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		E5E84E3C280D8D220013F5EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E84E3B280D8D220013F5EC /* AppDelegate.swift */; };
-		E5E84E40280D8D220013F5EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E84E3F280D8D220013F5EC /* ViewController.swift */; };
+		E5E84E40280D8D220013F5EC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E84E3F280D8D220013F5EC /* LoginController.swift */; };
 		E5E84E45280D8D240013F5EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E84E44280D8D240013F5EC /* Assets.xcassets */; };
 		E5E84E48280D8D240013F5EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E84E46280D8D240013F5EC /* LaunchScreen.storyboard */; };
+		E5F3D851280D97C8007AF7A1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D850280D97C8007AF7A1 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E5E84E38280D8D220013F5EC /* CornOffice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CornOffice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E84E3B280D8D220013F5EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E5E84E3F280D8D220013F5EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E5E84E3F280D8D220013F5EC /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		E5E84E44280D8D240013F5EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5E84E47280D8D240013F5EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5E84E49280D8D240013F5EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5F3D850280D97C8007AF7A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +54,30 @@
 		E5E84E3A280D8D220013F5EC /* CornOffice */ = {
 			isa = PBXGroup;
 			children = (
+				E5E84E4F280D96340013F5EC /* LoginScreen */,
 				E5E84E3B280D8D220013F5EC /* AppDelegate.swift */,
-				E5E84E3F280D8D220013F5EC /* ViewController.swift */,
-				E5E84E44280D8D240013F5EC /* Assets.xcassets */,
-				E5E84E46280D8D240013F5EC /* LaunchScreen.storyboard */,
+				E5E84E50280D963F0013F5EC /* Supporting Files */,
 				E5E84E49280D8D240013F5EC /* Info.plist */,
+				E5E84E44280D8D240013F5EC /* Assets.xcassets */,
 			);
 			path = CornOffice;
+			sourceTree = "<group>";
+		};
+		E5E84E4F280D96340013F5EC /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E5F3D850280D97C8007AF7A1 /* LoginView.swift */,
+				E5E84E3F280D8D220013F5EC /* LoginController.swift */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		E5E84E50280D963F0013F5EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E5E84E46280D8D240013F5EC /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5E84E40280D8D220013F5EC /* ViewController.swift in Sources */,
+				E5F3D851280D97C8007AF7A1 /* LoginView.swift in Sources */,
+				E5E84E40280D8D220013F5EC /* LoginController.swift in Sources */,
 				E5E84E3C280D8D220013F5EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
