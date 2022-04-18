@@ -35,28 +35,28 @@ class LoginController: UIViewController {
     
     // MARK: - Handle events
     @objc func loginTapped(sender: UIButton) {
-        let emailFieldError = textFieldValidator.validate(loginView.emailTextField)
-        if let error = emailFieldError {
-            loginView.warningLabel.text = error
-            loginView.warningLabel.isHidden = false
-            sender.shake()
-            return
-        }
-        
-        let registerFieldError = textFieldValidator.validate(loginView.passwordTextField)
-        if let error = registerFieldError {
-            loginView.warningLabel.text = error
-            loginView.warningLabel.isHidden = false
-            sender.shake()
-            return
-        }
-        
-        
-        loginView.warningLabel.isHidden = true
-        guard let email = loginView.emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-        guard let password = loginView.passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-        
-//        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+//        let emailFieldError = textFieldValidator.validate(loginView.emailTextField)
+//        if let error = emailFieldError {
+//            loginView.warningLabel.text = error
+//            loginView.warningLabel.isHidden = false
+//            sender.shake()
+//            return
+//        }
+//        
+//        let registerFieldError = textFieldValidator.validate(loginView.passwordTextField)
+//        if let error = registerFieldError {
+//            loginView.warningLabel.text = error
+//            loginView.warningLabel.isHidden = false
+//            sender.shake()
+//            return
+//        }
+//        
+//        
+//        loginView.warningLabel.isHidden = true
+//        guard let email = loginView.emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+//        guard let password = loginView.passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+//        
+//        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
 //            if let error = error {
 //                self.loginView.warningLabel.text = error.localizedDescription
 //                self.loginView.warningLabel.isHidden = false

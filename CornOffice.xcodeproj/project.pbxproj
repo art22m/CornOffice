@@ -20,6 +20,8 @@
 		E5F3D85D280DBF10007AF7A1 /* SensorsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D85C280DBF10007AF7A1 /* SensorsController.swift */; };
 		E5F3D860280DC043007AF7A1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D85F280DC043007AF7A1 /* TabBarViewController.swift */; };
 		E5F3D863280DC2AA007AF7A1 /* EntranceScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D862280DC2AA007AF7A1 /* EntranceScannerController.swift */; };
+		E5F3D865280DD061007AF7A1 /* EntranceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D864280DD061007AF7A1 /* EntranceManager.swift */; };
+		E5F3D867280DD0C5007AF7A1 /* EntranceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D866280DD0C5007AF7A1 /* EntranceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		E5F3D85C280DBF10007AF7A1 /* SensorsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsController.swift; sourceTree = "<group>"; };
 		E5F3D85F280DC043007AF7A1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E5F3D862280DC2AA007AF7A1 /* EntranceScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceScannerController.swift; sourceTree = "<group>"; };
+		E5F3D864280DD061007AF7A1 /* EntranceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceManager.swift; sourceTree = "<group>"; };
+		E5F3D866280DD0C5007AF7A1 /* EntranceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,9 +156,27 @@
 		E5F3D861280DC266007AF7A1 /* EntranceScannerScreen */ = {
 			isa = PBXGroup;
 			children = (
-				E5F3D862280DC2AA007AF7A1 /* EntranceScannerController.swift */,
+				E5F3D869280DD0D7007AF7A1 /* ViewController */,
+				E5F3D868280DD0D0007AF7A1 /* Model */,
 			);
 			path = EntranceScannerScreen;
+			sourceTree = "<group>";
+		};
+		E5F3D868280DD0D0007AF7A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5F3D864280DD061007AF7A1 /* EntranceManager.swift */,
+				E5F3D866280DD0C5007AF7A1 /* EntranceModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E5F3D869280DD0D7007AF7A1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E5F3D862280DC2AA007AF7A1 /* EntranceScannerController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5F3D867280DD0C5007AF7A1 /* EntranceModel.swift in Sources */,
 				E5F3D860280DC043007AF7A1 /* TabBarViewController.swift in Sources */,
 				E5F3D858280DA8A0007AF7A1 /* ButtonAnimations.swift in Sources */,
 				E5F3D863280DC2AA007AF7A1 /* EntranceScannerController.swift in Sources */,
@@ -279,6 +302,7 @@
 				E5F3D851280D97C8007AF7A1 /* LoginView.swift in Sources */,
 				E5E84E40280D8D220013F5EC /* LoginController.swift in Sources */,
 				E5F3D854280DA2F4007AF7A1 /* Utilities.swift in Sources */,
+				E5F3D865280DD061007AF7A1 /* EntranceManager.swift in Sources */,
 				E5F3D85A280DA969007AF7A1 /* TextFieldValidator.swift in Sources */,
 				E5E84E3C280D8D220013F5EC /* AppDelegate.swift in Sources */,
 			);
