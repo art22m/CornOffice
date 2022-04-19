@@ -18,6 +18,25 @@ struct DeviceManager {
     
     // MARK: - Fetch
     
+    func fetchDevices(for email: String) {
+        guard let url = URL(string: "https://beecoder-qr-code-entrance.herokuapp.com/gadgets/devices/\(email)") else { return }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                self.delegate?.didFailWithError(error: error)
+                return
+            }
+            
+            if let safeData = data {
+                if let devices = parseData(jsonData: safeData) {
+                    delegate?.didFetchDevices(self, devices: devices)
+                }
+            }
+        }
+        
+        task.resume()
+    }
+    
     func fetchDevices() {
         guard let url = URL(string: "https://beecoder-qr-code-entrance.herokuapp.com/device/all") else { return }
         

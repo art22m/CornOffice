@@ -8,11 +8,13 @@
 import UIKit
 import MercariQRScanner
 import AVFoundation
+import FirebaseAuth
 
 class EntranceScannerController: UIViewController {
     // MARK: - Properties
     var entranceManager = EntranceManager()
     let qrScannerView = QRScannerView()
+    var userEmail: String = "no-info"
     
     // MARK: - Init
     
@@ -20,6 +22,12 @@ class EntranceScannerController: UIViewController {
         super.viewDidLoad()
         
         entranceManager.delegate = self
+        
+        if let email = Auth.auth().currentUser?.email {
+            userEmail = email
+        } else {
+            userEmail = "no-info"
+        }
         
         setupBackgroundImage()
         setupQRScanner()
@@ -56,7 +64,7 @@ class EntranceScannerController: UIViewController {
     
     private func setupBackgroundImage() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "qr_entrance_screen")
+        backgroundImage.image = UIImage(named: "login_screen")
         backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
@@ -86,7 +94,7 @@ extension EntranceScannerController: QRScannerViewDelegate {
     }
     
     func qrScannerView(_ qrScannerView: QRScannerView, didSuccess code: String) {
-        entranceManager.entranceRequest(with: EntranceModel(key: Int(code) ?? 0, email: "s.v@mail.ru"))
+        entranceManager.entranceRequest(with: EntranceModel(key: Int(code) ?? 0, email: userEmail))
     }
 }
 

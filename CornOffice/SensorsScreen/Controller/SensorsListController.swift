@@ -89,6 +89,4 @@ extension SensorsListController: SensorManagerDelegate {
     func didFailWithError(error: Error) {
         print(error)
     }
-    
-    
 }

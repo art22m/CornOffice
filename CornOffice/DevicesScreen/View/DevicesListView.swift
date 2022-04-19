@@ -50,7 +50,7 @@ class DevicesListView: UIView {
     
     func setupBackgroundImage() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "login_screen")
+        backgroundImage.image = UIImage(named: "devices_screen")
         backgroundImage.contentMode = .scaleAspectFill
         insertSubview(backgroundImage, at: 0)
     }
@@ -74,5 +74,4 @@ class DevicesListView: UIView {
         
         devicesListTable.addSubview(refreshControl)
     }
-    
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
-        
-        let navigationContoller = UINavigationController(rootViewController: LoginController())
+        let user = Auth.auth().currentUser
+        var navigationContoller: UIViewController? = nil
+        if (user == nil) {
+            navigationContoller = UINavigationController(rootViewController: LoginController())
+        } else {
+            navigationContoller = TabBarViewController()
+        }
         
         window = UIWindow()
         window?.overrideUserInterfaceStyle = .light
