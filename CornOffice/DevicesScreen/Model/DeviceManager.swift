@@ -1,5 +1,5 @@
 //
-//  SensorManager.swift
+//  DeviceManager.swift
 //  CornOffice
 //
 //  Created by Artem Murashko on 19.04.2022.
@@ -7,16 +7,16 @@
 
 import Foundation
 
-protocol SensorManagerDelegate {
-    func didFetchSensors(_ sensorManager: SensorManager, sensors: [SensorModel])
+protocol DeviceManagerDelegate {
+    func didFetchDevices(_ deviceManager: DeviceManager, devices: [DeviceModel])
     func didFailWithError(error: Error)
 }
 
-struct SensorManager {
-    var delegate: SensorManagerDelegate?
+struct DeviceManager {
+    var delegate: DeviceManagerDelegate?
     
-    func fetchSensors() {
-        guard let url = URL(string: "https://beecoder-qr-code-entrance.herokuapp.com/sensor/all") else { return }
+    func fetchDevices() {
+        guard let url = URL(string: "https://beecoder-qr-code-entrance.herokuapp.com/device/all") else { return }
         
         // MARK: - Fetch
         
@@ -27,8 +27,8 @@ struct SensorManager {
             }
             
             if let safeData = data {
-                if let sensors = parseData(jsonData: safeData) {
-                    delegate?.didFetchSensors(self, sensors: sensors)
+                if let devices = parseData(jsonData: safeData) {
+                    delegate?.didFetchDevices(self, devices: devices)
                 }
             }
         }
@@ -38,15 +38,16 @@ struct SensorManager {
     
     // MARK: - Parse
     
-    private func parseData(jsonData: Data) -> [SensorModel]? {
+    private func parseData(jsonData: Data) -> [DeviceModel]? {
         let decoder = JSONDecoder()
         do {
-            let sensors = try decoder.decode([SensorModel].self, from: jsonData)
+            let devices = try decoder.decode([DeviceModel].self, from: jsonData)
             
-            return sensors
+            return devices
         } catch {
             delegate?.didFailWithError(error: error)
             return nil
         }
     }
 }
+

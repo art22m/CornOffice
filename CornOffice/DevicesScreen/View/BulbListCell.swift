@@ -28,7 +28,7 @@ class BulbListCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 30, weight: .medium)
-        label.textAlignment = .center
+        label.textAlignment = .left
         return label
     }()
     
@@ -36,7 +36,7 @@ class BulbListCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 18, weight: .medium)
-        label.textAlignment = .center
+        label.textAlignment = .left
         return label
     }()
     
@@ -44,7 +44,7 @@ class BulbListCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 20, weight: .bold)
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.text = "Control panel"
         
         return label
@@ -53,9 +53,9 @@ class BulbListCell: UITableViewCell {
     let turnOnLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.font = .systemFont(ofSize: 20, weight: .medium)
         label.textAlignment = .left
-        label.text = "Turn the bulb on/off: "
+        label.text = "Turn the bulb on/off:"
         
         return label
     }()
@@ -90,7 +90,7 @@ class BulbListCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 3, left: 5, bottom: 0, right: 5))
     }
     
@@ -130,14 +130,14 @@ class BulbListCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             controlPanelLabel.topAnchor.constraint(equalTo: bulbLogo.bottomAnchor, constant: 10),
-            controlPanelLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            controlPanelLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             controlPanelLabel.heightAnchor.constraint(equalToConstant: 25),
             controlPanelLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5)
         ])
         
         NSLayoutConstraint.activate([
             turnOnLabel.topAnchor.constraint(equalTo: controlPanelLabel.bottomAnchor, constant: 10),
-            turnOnLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            turnOnLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             turnOnLabel.heightAnchor.constraint(equalToConstant: 25)
         ])
         
@@ -150,14 +150,12 @@ class BulbListCell: UITableViewCell {
     }
     
     // MARK: - Settings
-    func configure(v1: String, v2: String) {
-        placeLabel.text = v1
-        deviceNameLabel.text = v2
+    func configure(with deviceModel: DeviceModel) {
+        placeLabel.text = deviceModel.place
+        deviceNameLabel.text = deviceModel.name
     }
     
     func animate() {
-//        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: .curveLinear, animations: {
-//            self.layoutIfNeeded()
-//        })
+        self.layoutIfNeeded()
     }
 }

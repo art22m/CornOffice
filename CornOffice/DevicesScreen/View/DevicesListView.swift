@@ -19,6 +19,7 @@ class DevicesListView: UIView {
         let indicator = UIActivityIndicatorView(style: .large)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         indicator.hidesWhenStopped = true
+        indicator.startAnimating()
         
         return indicator
     }()

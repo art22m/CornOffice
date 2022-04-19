@@ -12,6 +12,9 @@ class DevicesListController: UIViewController {
     let devicesListView = DevicesListView()
     var selectedIndex: IndexPath = IndexPath(row: -1, section: 0)
     
+    var deviceManager = DeviceManager()
+    var devicesList = [DeviceModel]()
+    
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +24,16 @@ class DevicesListController: UIViewController {
         self.devicesListView.devicesListTable.dataSource = self
         self.devicesListView.refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         
+        self.deviceManager.delegate = self
+        self.deviceManager.fetchDevices()
+        
         self.navigationItem.title = "Devices"
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     
     @objc func refresh(_ sender: AnyObject) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.devicesListView.refreshControl.endRefreshing()
-        }
-//        self.devicesListView.refreshControl.endRefreshing()
+        deviceManager.fetchDevices()
     }
 }
 
@@ -42,13 +45,13 @@ extension DevicesListController: UITableViewDelegate { }
 
 extension DevicesListController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        return devicesList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BulbListCell.identifier, for: indexPath) as? BulbListCell else { return UITableViewCell() }
         
-        cell.configure(v1: "Workspace A1", v2: "TP-Link Kasa KL130")
+        cell.configure(with: devicesList[indexPath.row])
         cell.animate()
         return cell
     }
@@ -69,5 +72,22 @@ extension DevicesListController: UITableViewDataSource {
         tableView.beginUpdates()
         tableView.reloadRows(at: [indexPath], with: .none)
         tableView.endUpdates()
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension DevicesListController: DeviceManagerDelegate {
+    func didFetchDevices(_ deviceManager: DeviceManager, devices: [DeviceModel]) {
+        DispatchQueue.main.async {
+            self.devicesList = devices
+            self.devicesListView.activityIndicator.stopAnimating()
+            self.devicesListView.refreshControl.endRefreshing()
+            self.devicesListView.devicesListTable.reloadData()
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
     }
 }
