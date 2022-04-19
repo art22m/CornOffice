@@ -9,6 +9,12 @@ import UIKit
 
 class SensorsListView: UIView {
     // MARK: - UI
+    let refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        
+        return control
+    }()
+    
     let activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .large)
         indicator.translatesAutoresizingMaskIntoConstraints = false
@@ -70,5 +76,7 @@ class SensorsListView: UIView {
             activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
+        
+        sensorsCollection.addSubview(refreshControl)
     }
 }

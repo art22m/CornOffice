@@ -11,7 +11,6 @@ class DevicesListView: UIView {
     // MARK: - UI
     let refreshControl: UIRefreshControl = {
         let control = UIRefreshControl()
-        control.attributedTitle = NSAttributedString(string: "refresh")
         
         return control
     }()

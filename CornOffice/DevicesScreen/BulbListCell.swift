@@ -28,7 +28,7 @@ class BulbListCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 30, weight: .medium)
-        label.textAlignment = .left
+        label.textAlignment = .center
         return label
     }()
     
@@ -36,7 +36,7 @@ class BulbListCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 18, weight: .medium)
-        label.textAlignment = .left
+        label.textAlignment = .center
         return label
     }()
     
@@ -110,7 +110,7 @@ class BulbListCell: UITableViewCell {
         NSLayoutConstraint.activate([
             bulbLogo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             bulbLogo.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            bulbLogo.widthAnchor.constraint(equalToConstant: 80),
+            bulbLogo.widthAnchor.constraint(equalToConstant: 50),
             bulbLogo.heightAnchor.constraint(equalToConstant: 80)
         ])
         

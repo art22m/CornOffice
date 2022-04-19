@@ -23,8 +23,13 @@ class SensorsListController: UIViewController {
         self.sensorManager.fetchSensors()
         
         // Configure collection
-        sensorsListView.sensorsCollection.delegate = self
-        sensorsListView.sensorsCollection.dataSource = self
+        self.sensorsListView.sensorsCollection.delegate = self
+        self.sensorsListView.sensorsCollection.dataSource = self
+        self.sensorsListView.refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        sensorManager.fetchSensors()
     }
 }
 
@@ -65,6 +70,7 @@ extension SensorsListController: SensorManagerDelegate {
         DispatchQueue.main.async {
             self.sensorsList = sensors
             self.sensorsListView.activityIndicator.stopAnimating()
+            self.sensorsListView.refreshControl.endRefreshing()
             self.sensorsListView.sensorsCollection.reloadData()
         }
     }
