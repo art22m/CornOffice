@@ -30,7 +30,8 @@ class DevicesListView: UIView {
         table.backgroundColor = .clear
         table.rowHeight = UITableView.automaticDimension
         table.estimatedRowHeight = 120
-        table.register(BulbListCell.self, forCellReuseIdentifier: BulbListCell.identifier)
+        table.register(BulbViewCell.self, forCellReuseIdentifier: BulbViewCell.identifier)
+        table.register(KettleViewCell.self, forCellReuseIdentifier: KettleViewCell.identifier)
         
         return table
     }()

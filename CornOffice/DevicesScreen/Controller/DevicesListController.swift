@@ -35,6 +35,15 @@ class DevicesListController: UIViewController {
     @objc func refresh(_ sender: AnyObject) {
         deviceManager.fetchDevices()
     }
+    
+    @objc func switchBulb(_ sender: UISwitch) {
+        deviceManager.switchBulb(id: devicesList[sender.tag].uid)
+    }
+    
+    @objc func turnOnKettle(_ sender: UIButton) {
+        sender.pulsate()
+        deviceManager.turnOnKettle(id:devicesList[sender.tag].uid)
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -49,15 +58,32 @@ extension DevicesListController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: BulbListCell.identifier, for: indexPath) as? BulbListCell else { return UITableViewCell() }
-        
-        cell.configure(with: devicesList[indexPath.row])
-        cell.animate()
-        return cell
+        let device = devicesList[indexPath.row]
+    
+        switch device.type {
+            case "kettle":
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: KettleViewCell.identifier, for: indexPath) as? KettleViewCell else { return UITableViewCell() }
+                cell.configure(with: device)
+                cell.turnOnButton.tag = indexPath.row
+                cell.turnOnButton.addTarget(self, action: #selector(turnOnKettle(_:)), for: .touchUpInside)
+                cell.animate()
+                
+                return cell
+            case "bulb":
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: BulbViewCell.identifier, for: indexPath) as? BulbViewCell else { return UITableViewCell() }
+                cell.configure(with: device)
+                cell.turnOnSwitch.tag = indexPath.row
+                cell.turnOnSwitch.addTarget(self, action: #selector(switchBulb(_:)), for: .touchUpInside)
+                cell.animate()
+                
+                return cell
+            default:
+                return UITableViewCell()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath == selectedIndex ? 200 : 90
+        return indexPath == selectedIndex ? 165 : 90
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -78,6 +104,10 @@ extension DevicesListController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension DevicesListController: DeviceManagerDelegate {
+    func didUpdateDevice(_ deviceManager: DeviceManager) {
+        deviceManager.fetchDevices()
+    }
+    
     func didFetchDevices(_ deviceManager: DeviceManager, devices: [DeviceModel]) {
         DispatchQueue.main.async {
             self.devicesList = devices

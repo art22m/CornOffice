@@ -7,10 +7,10 @@
 
 import UIKit
 
-class BulbListCell: UITableViewCell {
+class BulbViewCell: UITableViewCell {
     // MARK: - Properties
     
-    static let identifier = "BulbListCell"
+    static let identifier = "BulbViewCell"
     
     // MARK: - UI
     
@@ -19,8 +19,6 @@ class BulbListCell: UITableViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
         image.contentMode = .scaleAspectFit
-        image.image = UIImage(systemName: "lightbulb")
-        image.tintColor = .black
         return image
     }()
     
@@ -153,6 +151,15 @@ class BulbListCell: UITableViewCell {
     func configure(with deviceModel: DeviceModel) {
         placeLabel.text = deviceModel.place
         deviceNameLabel.text = deviceModel.name
+        turnOnSwitch.isOn = deviceModel.status
+        
+        if (!deviceModel.status) {
+            bulbLogo.image = UIImage(systemName: "lightbulb")
+            bulbLogo.tintColor = .black
+        } else {
+            bulbLogo.image = UIImage(systemName: "lightbulb.fill")
+            bulbLogo.tintColor = .systemYellow
+        }
     }
     
     func animate() {

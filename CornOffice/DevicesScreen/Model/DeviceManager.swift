@@ -8,6 +8,7 @@
 import Foundation
 
 protocol DeviceManagerDelegate {
+    func didUpdateDevice(_ deviceManager: DeviceManager)
     func didFetchDevices(_ deviceManager: DeviceManager, devices: [DeviceModel])
     func didFailWithError(error: Error)
 }
@@ -15,10 +16,10 @@ protocol DeviceManagerDelegate {
 struct DeviceManager {
     var delegate: DeviceManagerDelegate?
     
+    // MARK: - Fetch
+    
     func fetchDevices() {
         guard let url = URL(string: "https://beecoder-qr-code-entrance.herokuapp.com/device/all") else { return }
-        
-        // MARK: - Fetch
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -31,6 +32,36 @@ struct DeviceManager {
                     delegate?.didFetchDevices(self, devices: devices)
                 }
             }
+        }
+        
+        task.resume()
+    }
+    
+    func switchBulb(id: String) {
+        guard let url = URL(string: "https://beecoder-qr-code-entrance.herokuapp.com/device/bulb/\(id)") else { return }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                self.delegate?.didFailWithError(error: error)
+                return
+            }
+            
+            self.delegate?.didUpdateDevice(self)
+        }
+        
+        task.resume()
+    }
+    
+    func turnOnKettle(id: String) {
+        guard let url = URL(string: "https://beecoder-qr-code-entrance.herokuapp.com/device/kettle/boil/\(id)") else { return }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                self.delegate?.didFailWithError(error: error)
+                return
+            }
+            
+            self.delegate?.didUpdateDevice(self)
         }
         
         task.resume()

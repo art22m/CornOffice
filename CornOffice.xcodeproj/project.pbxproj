@@ -12,6 +12,7 @@
 		E5ACC09C280E6121008AA9AB /* SensorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ACC09B280E6121008AA9AB /* SensorModel.swift */; };
 		E5ACC09F280E7CF1008AA9AB /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ACC09E280E7CF1008AA9AB /* DeviceManager.swift */; };
 		E5ACC0A1280E7D21008AA9AB /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ACC0A0280E7D21008AA9AB /* DeviceModel.swift */; };
+		E5ACC0A6280E96F0008AA9AB /* KettleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ACC0A5280E96F0008AA9AB /* KettleViewCell.swift */; };
 		E5E84E3C280D8D220013F5EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E84E3B280D8D220013F5EC /* AppDelegate.swift */; };
 		E5E84E40280D8D220013F5EC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E84E3F280D8D220013F5EC /* LoginController.swift */; };
 		E5E84E45280D8D240013F5EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E84E44280D8D240013F5EC /* Assets.xcassets */; };
@@ -30,7 +31,7 @@
 		E5F3D86D280DF56C007AF7A1 /* SensorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D86C280DF56C007AF7A1 /* SensorCollectionViewCell.swift */; };
 		E5F3D870280E16B0007AF7A1 /* DevicesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D86F280E16B0007AF7A1 /* DevicesListController.swift */; };
 		E5F3D872280E16C4007AF7A1 /* DevicesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D871280E16C4007AF7A1 /* DevicesListView.swift */; };
-		E5F3D874280E1706007AF7A1 /* BulbListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D873280E1706007AF7A1 /* BulbListCell.swift */; };
+		E5F3D874280E1706007AF7A1 /* BulbViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D873280E1706007AF7A1 /* BulbViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		E5ACC09B280E6121008AA9AB /* SensorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorModel.swift; sourceTree = "<group>"; };
 		E5ACC09E280E7CF1008AA9AB /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		E5ACC0A0280E7D21008AA9AB /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
+		E5ACC0A5280E96F0008AA9AB /* KettleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KettleViewCell.swift; sourceTree = "<group>"; };
 		E5E84E38280D8D220013F5EC /* CornOffice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CornOffice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E84E3B280D8D220013F5EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5E84E3F280D8D220013F5EC /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -61,7 +63,7 @@
 		E5F3D86C280DF56C007AF7A1 /* SensorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorCollectionViewCell.swift; sourceTree = "<group>"; };
 		E5F3D86F280E16B0007AF7A1 /* DevicesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesListController.swift; sourceTree = "<group>"; };
 		E5F3D871280E16C4007AF7A1 /* DevicesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesListView.swift; sourceTree = "<group>"; };
-		E5F3D873280E1706007AF7A1 /* BulbListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbListCell.swift; sourceTree = "<group>"; };
+		E5F3D873280E1706007AF7A1 /* BulbViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +133,8 @@
 		E5ACC0A3280E7DE0008AA9AB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E5F3D873280E1706007AF7A1 /* BulbListCell.swift */,
+				E5ACC0A5280E96F0008AA9AB /* KettleViewCell.swift */,
+				E5F3D873280E1706007AF7A1 /* BulbViewCell.swift */,
 				E5F3D871280E16C4007AF7A1 /* DevicesListView.swift */,
 			);
 			path = View;
@@ -390,7 +393,8 @@
 				E5F3D851280D97C8007AF7A1 /* LoginView.swift in Sources */,
 				E5E84E40280D8D220013F5EC /* LoginController.swift in Sources */,
 				E5F3D854280DA2F4007AF7A1 /* Utilities.swift in Sources */,
-				E5F3D874280E1706007AF7A1 /* BulbListCell.swift in Sources */,
+				E5F3D874280E1706007AF7A1 /* BulbViewCell.swift in Sources */,
+				E5ACC0A6280E96F0008AA9AB /* KettleViewCell.swift in Sources */,
 				E5ACC099280E60E3008AA9AB /* SensorManager.swift in Sources */,
 				E5F3D865280DD061007AF7A1 /* EntranceManager.swift in Sources */,
 				E5F3D85A280DA969007AF7A1 /* TextFieldValidator.swift in Sources */,
