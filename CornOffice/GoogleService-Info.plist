@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>511079067004-2to4fh87er04endl6i79g16sd7aj5qh1.apps.googleusercontent.com</string>
+	<string>332314188980-np4d80vk87cf3ukfj6adn4vv1j24hhvc.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.511079067004-2to4fh87er04endl6i79g16sd7aj5qh1</string>
+	<string>com.googleusercontent.apps.332314188980-np4d80vk87cf3ukfj6adn4vv1j24hhvc</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAE-D_w6YQVi8dELaqq-0gmKa_LLCgUwHc</string>
+	<string>AIzaSyC5Pw5Whm66gjknVh6R0p17wKyEciwgyQw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>511079067004</string>
+	<string>332314188980</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.art22m.CornOffice</string>
 	<key>PROJECT_ID</key>
-	<string>beecoder-96c87</string>
+	<string>becoder-c9384</string>
 	<key>STORAGE_BUCKET</key>
-	<string>beecoder-96c87.appspot.com</string>
+	<string>becoder-c9384.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:511079067004:ios:9d1bfbe176c6f3516688f9</string>
+	<string>1:332314188980:ios:cc84f4e41c2efcb7b7cbe1</string>
 </dict>
 </plist>

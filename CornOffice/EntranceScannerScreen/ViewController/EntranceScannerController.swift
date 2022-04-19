@@ -16,12 +16,15 @@ class EntranceScannerController: UIViewController {
     let qrScannerView = QRScannerView()
     var userEmail: String = "no-info"
     
+    let alert = UIAlertController(title: "Enter status", message: "You have successfully enter", preferredStyle: .alert)
+    
     // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         entranceManager.delegate = self
+        alert.addAction(UIAlertAction(title: "Great!", style: .default, handler: nil))
         
         if let email = Auth.auth().currentUser?.email {
             userEmail = email
@@ -102,9 +105,10 @@ extension EntranceScannerController: QRScannerViewDelegate {
 
 extension EntranceScannerController: EntranceManagerDelegate {
     func didConnectSuccessfully() {
-        print("succesful enter")
         DispatchQueue.main.async {
-            self.qrScannerView.rescan()
+            self.present(self.alert, animated: true) {
+                self.qrScannerView.rescan()
+            }
         }
     }
     
