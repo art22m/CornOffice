@@ -11,6 +11,7 @@ class DevicesListController: UIViewController {
     // MARK: - Properties
     let devicesListView = DevicesListView()
     var selectedIndex: IndexPath = IndexPath(row: -1, section: 0)
+    let source = DispatchSource.makeTimerSource()
     
     var deviceManager = DeviceManager()
     var devicesList = [DeviceModel]()
@@ -29,6 +30,16 @@ class DevicesListController: UIViewController {
         
         self.navigationItem.title = "Devices"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        self.startRepeatingUpdate()
+    }
+    
+    func startRepeatingUpdate() {
+        source.setEventHandler {
+            self.deviceManager.fetchDevices()
+        }
+        source.schedule(deadline: .now(), repeating: 3)
+        source.activate()
     }
     
     

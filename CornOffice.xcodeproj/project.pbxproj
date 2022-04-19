@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D7D6B5947C74C888EE0824E7 /* Pods_CornOffice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DAE70FC39FE31A57405D83 /* Pods_CornOffice.framework */; };
+		E5530457280EBED000991144 /* HubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5530456280EBED000991144 /* HubController.swift */; };
+		E5530459280EBEE700991144 /* HubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5530458280EBEE700991144 /* HubView.swift */; };
 		E5ACC099280E60E3008AA9AB /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ACC098280E60E3008AA9AB /* SensorManager.swift */; };
 		E5ACC09C280E6121008AA9AB /* SensorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ACC09B280E6121008AA9AB /* SensorModel.swift */; };
 		E5ACC09F280E7CF1008AA9AB /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ACC09E280E7CF1008AA9AB /* DeviceManager.swift */; };
@@ -38,6 +40,8 @@
 		34DAE70FC39FE31A57405D83 /* Pods_CornOffice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CornOffice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0508754BA3B18C68F8C390E /* Pods-CornOffice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CornOffice.debug.xcconfig"; path = "Target Support Files/Pods-CornOffice/Pods-CornOffice.debug.xcconfig"; sourceTree = "<group>"; };
 		C16C23AC866E61CF41C135CB /* Pods-CornOffice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CornOffice.release.xcconfig"; path = "Target Support Files/Pods-CornOffice/Pods-CornOffice.release.xcconfig"; sourceTree = "<group>"; };
+		E5530456280EBED000991144 /* HubController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubController.swift; sourceTree = "<group>"; };
+		E5530458280EBEE700991144 /* HubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubView.swift; sourceTree = "<group>"; };
 		E5ACC098280E60E3008AA9AB /* SensorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
 		E5ACC09B280E6121008AA9AB /* SensorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorModel.swift; sourceTree = "<group>"; };
 		E5ACC09E280E7CF1008AA9AB /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
@@ -93,6 +97,15 @@
 				C16C23AC866E61CF41C135CB /* Pods-CornOffice.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E5530455280EBE9400991144 /* HubScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E5530458280EBEE700991144 /* HubView.swift */,
+				E5530456280EBED000991144 /* HubController.swift */,
+			);
+			path = HubScreen;
 			sourceTree = "<group>";
 		};
 		E5ACC096280E60C5008AA9AB /* View */ = {
@@ -170,8 +183,9 @@
 			isa = PBXGroup;
 			children = (
 				E5F3D852280DA2D1007AF7A1 /* Helpers */,
-				E5F3D86E280E169A007AF7A1 /* DevicesScreen */,
 				E5F3D85E280DC026007AF7A1 /* TabBar */,
+				E5530455280EBE9400991144 /* HubScreen */,
+				E5F3D86E280E169A007AF7A1 /* DevicesScreen */,
 				E5F3D861280DC266007AF7A1 /* EntranceScannerScreen */,
 				E5F3D85B280DBEE9007AF7A1 /* SensorsScreen */,
 				E5E84E3B280D8D220013F5EC /* AppDelegate.swift */,
@@ -385,6 +399,7 @@
 				E5F3D860280DC043007AF7A1 /* TabBarViewController.swift in Sources */,
 				E5F3D86D280DF56C007AF7A1 /* SensorCollectionViewCell.swift in Sources */,
 				E5ACC09C280E6121008AA9AB /* SensorModel.swift in Sources */,
+				E5530459280EBEE700991144 /* HubView.swift in Sources */,
 				E5F3D870280E16B0007AF7A1 /* DevicesListController.swift in Sources */,
 				E5F3D858280DA8A0007AF7A1 /* ButtonAnimations.swift in Sources */,
 				E5F3D863280DC2AA007AF7A1 /* EntranceScannerController.swift in Sources */,
@@ -394,6 +409,7 @@
 				E5E84E40280D8D220013F5EC /* LoginController.swift in Sources */,
 				E5F3D854280DA2F4007AF7A1 /* Utilities.swift in Sources */,
 				E5F3D874280E1706007AF7A1 /* BulbViewCell.swift in Sources */,
+				E5530457280EBED000991144 /* HubController.swift in Sources */,
 				E5ACC0A6280E96F0008AA9AB /* KettleViewCell.swift in Sources */,
 				E5ACC099280E60E3008AA9AB /* SensorManager.swift in Sources */,
 				E5F3D865280DD061007AF7A1 /* EntranceManager.swift in Sources */,
