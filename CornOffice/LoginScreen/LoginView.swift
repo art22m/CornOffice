@@ -123,7 +123,7 @@ class LoginView: UIView {
         NSLayoutConstraint.activate([
             loginView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             loginView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
-            loginView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.4),
+            loginView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5),
             loginView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         

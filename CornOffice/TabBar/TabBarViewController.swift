@@ -18,16 +18,19 @@ class TabBarViewController: UITabBarController {
         let entranceScannerVC = EntranceScannerController()
         entranceScannerVC.title = "Enter"
         
+        let devicesVC = UINavigationController(rootViewController: DevicesListController())
+        devicesVC.title = "Devices"
+        
         self.tabBar.backgroundColor = .systemGray6
         self.modalPresentationStyle = .fullScreen
         
-        self.setViewControllers([sensorsVC, entranceScannerVC], animated: false)
+        self.setViewControllers([sensorsVC, entranceScannerVC, devicesVC], animated: false)
         self.setIcons()
     }
     
     private func setIcons() {
         guard let items = self.tabBar.items else { return }
-        let icons = ["sensor.tag.radiowaves.forward", "qrcode.viewfinder"]
+        let icons = ["sensor.tag.radiowaves.forward", "qrcode.viewfinder", "dot.radiowaves.left.and.right"]
         
         for (id, item) in items.enumerated() {
             item.image = UIImage(systemName: icons[id])

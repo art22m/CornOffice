@@ -12,21 +12,27 @@ import AVFoundation
 class EntranceScannerController: UIViewController {
     // MARK: - Properties
     var entranceManager = EntranceManager()
-    
+    let qrScannerView = QRScannerView()
     
     // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .systemYellow
         entranceManager.delegate = self
+        
+        setupBackgroundImage()
+        setupQRScanner()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        setupQRScanner()
-        setupBackgroundImage()
+        super.viewWillAppear(animated)
+        qrScannerView.startRunning()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        qrScannerView.stopRunning()
     }
     
     // MARK: - QR Scanner Settings
@@ -55,13 +61,10 @@ class EntranceScannerController: UIViewController {
         self.view.insertSubview(backgroundImage, at: 0)
     }
     
-    
     private func setupQRScannerView() {
-        let qrScannerView = QRScannerView(frame: view.bounds)
-        qrScannerView.focusImagePadding = 8.0
-        qrScannerView.animationDuration = 0.5
-
+        qrScannerView.frame = view.bounds
         view.addSubview(qrScannerView)
+        
         qrScannerView.configure(delegate: self, input: .init(isBlurEffectEnabled: true))
         qrScannerView.startRunning()
     }
@@ -81,7 +84,7 @@ extension EntranceScannerController: QRScannerViewDelegate {
     func qrScannerView(_ qrScannerView: QRScannerView, didFailure error: QRScannerError) {
         print(error)
     }
-
+    
     func qrScannerView(_ qrScannerView: QRScannerView, didSuccess code: String) {
         entranceManager.entranceRequest(with: EntranceModel(key: Int(code) ?? 0, email: "s.v@mail.ru"))
     }
@@ -92,9 +95,15 @@ extension EntranceScannerController: QRScannerViewDelegate {
 extension EntranceScannerController: EntranceManagerDelegate {
     func didConnectSuccessfully() {
         print("succesful enter")
+        DispatchQueue.main.async {
+            self.qrScannerView.rescan()
+        }
     }
     
     func didFailWithError() {
         print("error")
+        DispatchQueue.main.async {
+            self.qrScannerView.rescan()
+        }
     }
 }

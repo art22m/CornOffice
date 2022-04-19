@@ -30,9 +30,9 @@ struct EntranceManager {
         }
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let data = data {
-                let response = parseResponse(for: data)
-                if (response == 200) {
+            print(data)
+            if let safeData = data {
+                if (parseResponse(for: safeData) == 200) {
                     delegate?.didConnectSuccessfully()
                 } else {
                     delegate?.didFailWithError()
@@ -44,9 +44,14 @@ struct EntranceManager {
     }
     
     private func parseResponse(for data: Data) -> Int {
+        let decoder = JSONDecoder()
         do {
-            let decodedData = try JSONDecoder().decode(EntranceResponse.self, from: data)
+//            let json = try JSONSerialization.jsonObject(with: data)
+//            print(json)
+            
+            let decodedData = try decoder.decode(EntranceResponse.self, from: data)
             print(decodedData)
+            
             return decodedData.status
         } catch {
             return 400

@@ -24,6 +24,9 @@
 		E5F3D867280DD0C5007AF7A1 /* EntranceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D866280DD0C5007AF7A1 /* EntranceModel.swift */; };
 		E5F3D86B280DDAD3007AF7A1 /* SensorsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D86A280DDAD3007AF7A1 /* SensorsListView.swift */; };
 		E5F3D86D280DF56C007AF7A1 /* SensorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D86C280DF56C007AF7A1 /* SensorCollectionViewCell.swift */; };
+		E5F3D870280E16B0007AF7A1 /* DevicesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D86F280E16B0007AF7A1 /* DevicesListController.swift */; };
+		E5F3D872280E16C4007AF7A1 /* DevicesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D871280E16C4007AF7A1 /* DevicesListView.swift */; };
+		E5F3D874280E1706007AF7A1 /* BulbListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F3D873280E1706007AF7A1 /* BulbListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		E5F3D866280DD0C5007AF7A1 /* EntranceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceModel.swift; sourceTree = "<group>"; };
 		E5F3D86A280DDAD3007AF7A1 /* SensorsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsListView.swift; sourceTree = "<group>"; };
 		E5F3D86C280DF56C007AF7A1 /* SensorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorCollectionViewCell.swift; sourceTree = "<group>"; };
+		E5F3D86F280E16B0007AF7A1 /* DevicesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesListController.swift; sourceTree = "<group>"; };
+		E5F3D871280E16C4007AF7A1 /* DevicesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesListView.swift; sourceTree = "<group>"; };
+		E5F3D873280E1706007AF7A1 /* BulbListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				E5F3D852280DA2D1007AF7A1 /* Helpers */,
+				E5F3D86E280E169A007AF7A1 /* DevicesScreen */,
 				E5F3D85E280DC026007AF7A1 /* TabBar */,
 				E5F3D861280DC266007AF7A1 /* EntranceScannerScreen */,
 				E5F3D85B280DBEE9007AF7A1 /* SensorsScreen */,
@@ -183,6 +190,16 @@
 				E5F3D862280DC2AA007AF7A1 /* EntranceScannerController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E5F3D86E280E169A007AF7A1 /* DevicesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E5F3D873280E1706007AF7A1 /* BulbListCell.swift */,
+				E5F3D871280E16C4007AF7A1 /* DevicesListView.swift */,
+				E5F3D86F280E16B0007AF7A1 /* DevicesListController.swift */,
+			);
+			path = DevicesScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +320,7 @@
 				E5F3D867280DD0C5007AF7A1 /* EntranceModel.swift in Sources */,
 				E5F3D860280DC043007AF7A1 /* TabBarViewController.swift in Sources */,
 				E5F3D86D280DF56C007AF7A1 /* SensorCollectionViewCell.swift in Sources */,
+				E5F3D870280E16B0007AF7A1 /* DevicesListController.swift in Sources */,
 				E5F3D858280DA8A0007AF7A1 /* ButtonAnimations.swift in Sources */,
 				E5F3D863280DC2AA007AF7A1 /* EntranceScannerController.swift in Sources */,
 				E5F3D86B280DDAD3007AF7A1 /* SensorsListView.swift in Sources */,
@@ -310,8 +328,10 @@
 				E5F3D851280D97C8007AF7A1 /* LoginView.swift in Sources */,
 				E5E84E40280D8D220013F5EC /* LoginController.swift in Sources */,
 				E5F3D854280DA2F4007AF7A1 /* Utilities.swift in Sources */,
+				E5F3D874280E1706007AF7A1 /* BulbListCell.swift in Sources */,
 				E5F3D865280DD061007AF7A1 /* EntranceManager.swift in Sources */,
 				E5F3D85A280DA969007AF7A1 /* TextFieldValidator.swift in Sources */,
+				E5F3D872280E16C4007AF7A1 /* DevicesListView.swift in Sources */,
 				E5E84E3C280D8D220013F5EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,6 +19,7 @@ class SensorsListView: UIView {
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.backgroundColor = .clear
         collection.alwaysBounceVertical = true
+        collection.register(SensorCollectionViewCell.self, forCellWithReuseIdentifier: SensorCollectionViewCell.identifier)
         return collection
     }()
     

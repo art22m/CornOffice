@@ -9,6 +9,7 @@ import UIKit
 
 class SensorsListController: UIViewController {
     let sensorsListView = SensorsListView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -19,7 +20,6 @@ class SensorsListController: UIViewController {
         // Configure collection
         sensorsListView.sensorsCollection.delegate = self
         sensorsListView.sensorsCollection.dataSource = self
-        sensorsListView.sensorsCollection.register(SensorCollectionViewCell.self, forCellWithReuseIdentifier: SensorCollectionViewCell.identifier)
     }
 }
 
