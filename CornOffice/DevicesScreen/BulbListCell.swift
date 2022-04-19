@@ -156,8 +156,8 @@ class BulbListCell: UITableViewCell {
     }
     
     func animate() {
-        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
-            self.layoutIfNeeded()
-        })
+//        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: .curveLinear, animations: {
+//            self.layoutIfNeeded()
+//        })
     }
 }

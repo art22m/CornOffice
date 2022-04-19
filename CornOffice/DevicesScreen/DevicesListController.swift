@@ -49,6 +49,7 @@ extension DevicesListController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: BulbListCell.identifier, for: indexPath) as? BulbListCell else { return UITableViewCell() }
         
         cell.configure(v1: "Workspace A1", v2: "TP-Link Kasa KL130")
+        cell.animate()
         return cell
     }
     

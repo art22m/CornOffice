@@ -9,6 +9,7 @@ import UIKit
 
 class SensorsListController: UIViewController {
     let sensorsListView = SensorsListView()
+    let source = DispatchSource.makeTimerSource()
     var sensorsList = [SensorModel]()
     var sensorManager = SensorManager()
     
@@ -26,8 +27,17 @@ class SensorsListController: UIViewController {
         self.sensorsListView.sensorsCollection.delegate = self
         self.sensorsListView.sensorsCollection.dataSource = self
         self.sensorsListView.refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        
+        self.startRepeatingUpdate()
     }
     
+    func startRepeatingUpdate() {
+           source.setEventHandler {
+               self.sensorManager.fetchSensors()
+           }
+           source.schedule(deadline: .now(), repeating: 10)
+           source.activate()
+       }
     @objc func refresh(_ sender: AnyObject) {
         sensorManager.fetchSensors()
     }
