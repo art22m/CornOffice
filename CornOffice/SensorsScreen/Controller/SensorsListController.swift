@@ -9,6 +9,8 @@ import UIKit
 
 class SensorsListController: UIViewController {
     let sensorsListView = SensorsListView()
+    var sensorsList = [SensorModel]()
+    var sensorManager = SensorManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +19,9 @@ class SensorsListController: UIViewController {
         self.navigationItem.title = "Sensors"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
+        self.sensorManager.delegate = self
+        self.sensorManager.fetchSensors()
+        
         // Configure collection
         sensorsListView.sensorsCollection.delegate = self
         sensorsListView.sensorsCollection.dataSource = self
@@ -24,26 +29,49 @@ class SensorsListController: UIViewController {
 }
 
 // MARK: - UICollectionViewDelegate
+
 extension SensorsListController: UICollectionViewDelegate {
     
 }
 
 // MARK: - UICollectionViewDataSource
+
 extension SensorsListController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return sensorsList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SensorCollectionViewCell.identifier, for: indexPath) as? SensorCollectionViewCell else { return UICollectionViewCell() }
-        cell.configure(v1: "Kitchen", v2: "Temperature", v3: "21°C")
+        
+        cell.configure(sensor: sensorsList[indexPath.row])
         return cell
     }
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension SensorsListController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (sensorsListView.sensorsCollection.frame.width - 10) / 2
         return CGSize(width: width, height: 140)
     }
+}
+
+// MARK: - SensorManagerDelegate
+
+extension SensorsListController: SensorManagerDelegate {
+    func didFetchSensors(_ sensorManager: SensorManager, sensors: [SensorModel]) {
+        DispatchQueue.main.async {
+            self.sensorsList = sensors
+            self.sensorsListView.activityIndicator.stopAnimating()
+            self.sensorsListView.sensorsCollection.reloadData()
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+    
+
 }

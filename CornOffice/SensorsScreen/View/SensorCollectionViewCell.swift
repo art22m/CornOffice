@@ -7,6 +7,9 @@
 
 import UIKit
 
+enum SensorType {
+    
+}
 class SensorCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     
@@ -18,7 +21,7 @@ class SensorCollectionViewCell: UICollectionViewCell {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleAspectFit
         image.image = UIImage(systemName: "thermometer")
         image.tintColor = .black
         return image
@@ -27,8 +30,10 @@ class SensorCollectionViewCell: UICollectionViewCell {
     let placeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 30, weight: .medium)
-        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.2
         return label
     }()
     
@@ -43,7 +48,7 @@ class SensorCollectionViewCell: UICollectionViewCell {
     let sensorValueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 35, weight: .medium)
+        label.font = .systemFont(ofSize: 20, weight: .medium)
         label.textAlignment = .center
         return label
     }()
@@ -83,7 +88,7 @@ class SensorCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             sensorLogo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             sensorLogo.topAnchor.constraint(equalTo: placeLabel.bottomAnchor, constant: 15),
-            sensorLogo.widthAnchor.constraint(equalToConstant: 50),
+            sensorLogo.widthAnchor.constraint(equalToConstant: 60),
             sensorLogo.heightAnchor.constraint(equalToConstant: 75)
         ])
 
@@ -96,9 +101,20 @@ class SensorCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Settings
-    func configure(v1: String, v2: String, v3: String) {
-        placeLabel.text = v1
-        sensorNameLabel.text = v2
-        sensorValueLabel.text = v3
+    func configure(sensor: SensorModel) {
+        placeLabel.text = sensor.place
+        sensorNameLabel.text = sensor.type
+        
+        switch sensor.type {
+            case "temperature_sensor":
+                sensorValueLabel.text = String(format: "%0.1f", sensor.value) + "°С"
+                sensorLogo.image = UIImage(systemName: "thermometer")
+            case "humidity_sensor":
+                sensorValueLabel.text = String(format: "%0.1f", sensor.value) + "%"
+                sensorLogo.image = UIImage(systemName: "humidity")
+            default:
+                sensorValueLabel.text = "-"
+                sensorLogo.image = UIImage(systemName: "antenna.radiowaves.left.and.right.slash")
+        }
     }
 }

@@ -18,7 +18,7 @@ class BulbListCell: UITableViewCell {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleAspectFit
         image.image = UIImage(systemName: "lightbulb")
         image.tintColor = .black
         return image

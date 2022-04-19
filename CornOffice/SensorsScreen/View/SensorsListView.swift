@@ -9,6 +9,15 @@ import UIKit
 
 class SensorsListView: UIView {
     // MARK: - UI
+    let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.hidesWhenStopped = true
+        indicator.startAnimating()
+        
+        return indicator
+    }()
+    
     let sensorsCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -46,6 +55,7 @@ class SensorsListView: UIView {
     
     func setupViews() {
         addSubview(sensorsCollection)
+        addSubview(activityIndicator)
     }
     
     func setupConstraints() {
@@ -55,7 +65,10 @@ class SensorsListView: UIView {
             sensorsCollection.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             sensorsCollection.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
     }
-    
-    
 }

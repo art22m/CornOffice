@@ -16,7 +16,7 @@ class DevicesListView: UIView {
         return control
     }()
     
-    let acitvityIndicator: UIActivityIndicatorView = {
+    let activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .large)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         indicator.hidesWhenStopped = true
@@ -65,10 +65,10 @@ class DevicesListView: UIView {
             devicesListTable.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
         
-        addSubview(acitvityIndicator)
+        addSubview(activityIndicator)
         NSLayoutConstraint.activate([
-            acitvityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
-            acitvityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)
+            activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         devicesListTable.addSubview(refreshControl)
