@@ -15,6 +15,27 @@ protocol SensorManagerDelegate {
 struct SensorManager {
     var delegate: SensorManagerDelegate?
     
+    func fetchSensors(for email: String) {
+        guard let url = URL(string: "https://beecoder-qr-code-entrance.herokuapp.com/gadgets/sensors/\(email)") else { return }
+        
+        // MARK: - Fetch
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                self.delegate?.didFailWithError(error: error)
+                return
+            }
+            
+            if let safeData = data {
+                if let sensors = parseData(jsonData: safeData) {
+                    delegate?.didFetchSensors(self, sensors: sensors)
+                }
+            }
+        }
+        
+        task.resume()
+    }
+    
     func fetchSensors() {
         guard let url = URL(string: "https://beecoder-qr-code-entrance.herokuapp.com/sensor/all") else { return }
         
@@ -50,4 +71,3 @@ struct SensorManager {
         }
     }
 }
-

@@ -19,6 +19,7 @@ class DevicesListView: UIView {
         let indicator = UIActivityIndicatorView(style: .large)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         indicator.hidesWhenStopped = true
+        indicator.startAnimating()
         
         return indicator
     }()
@@ -29,7 +30,8 @@ class DevicesListView: UIView {
         table.backgroundColor = .clear
         table.rowHeight = UITableView.automaticDimension
         table.estimatedRowHeight = 120
-        table.register(BulbListCell.self, forCellReuseIdentifier: BulbListCell.identifier)
+        table.register(BulbViewCell.self, forCellReuseIdentifier: BulbViewCell.identifier)
+        table.register(KettleViewCell.self, forCellReuseIdentifier: KettleViewCell.identifier)
         
         return table
     }()
@@ -48,7 +50,7 @@ class DevicesListView: UIView {
     
     func setupBackgroundImage() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "login_screen")
+        backgroundImage.image = UIImage(named: "devices_screen")
         backgroundImage.contentMode = .scaleAspectFill
         insertSubview(backgroundImage, at: 0)
     }
@@ -72,5 +74,4 @@ class DevicesListView: UIView {
         
         devicesListTable.addSubview(refreshControl)
     }
-    
 }

@@ -15,7 +15,7 @@ class SensorsListController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         self.view = sensorsListView
         self.navigationItem.title = "Sensors"
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -32,12 +32,13 @@ class SensorsListController: UIViewController {
     }
     
     func startRepeatingUpdate() {
-           source.setEventHandler {
-               self.sensorManager.fetchSensors()
-           }
-           source.schedule(deadline: .now(), repeating: 10)
-           source.activate()
-       }
+        source.setEventHandler {
+            self.sensorManager.fetchSensors()
+        }
+        source.schedule(deadline: .now(), repeating: 10)
+        source.activate()
+    }
+    
     @objc func refresh(_ sender: AnyObject) {
         sensorManager.fetchSensors()
     }
@@ -88,6 +89,4 @@ extension SensorsListController: SensorManagerDelegate {
     func didFailWithError(error: Error) {
         print(error)
     }
-    
-
 }

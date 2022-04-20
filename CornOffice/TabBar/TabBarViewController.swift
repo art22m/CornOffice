@@ -21,16 +21,24 @@ class TabBarViewController: UITabBarController {
         let devicesVC = UINavigationController(rootViewController: DevicesListController())
         devicesVC.title = "Devices"
         
+        
+        let hubVC = UINavigationController(rootViewController: HubController())
+        hubVC.title = "Hub"
+        
+        let bookingVC = UINavigationController(rootViewController: BookingViewController())
+        bookingVC.title = "Booking"
+        
+        
         self.tabBar.backgroundColor = .systemGray6
         self.modalPresentationStyle = .fullScreen
         
-        self.setViewControllers([sensorsVC, entranceScannerVC, devicesVC], animated: false)
+        self.setViewControllers([sensorsVC, devicesVC, entranceScannerVC, bookingVC, hubVC], animated: false)
         self.setIcons()
     }
     
     private func setIcons() {
         guard let items = self.tabBar.items else { return }
-        let icons = ["sensor.tag.radiowaves.forward", "qrcode.viewfinder", "dot.radiowaves.left.and.right"]
+        let icons = ["sensor.tag.radiowaves.forward", "dot.radiowaves.left.and.right", "qrcode.viewfinder", "calendar", "house"]
         
         for (id, item) in items.enumerated() {
             item.image = UIImage(systemName: icons[id])

@@ -30,7 +30,6 @@ struct EntranceManager {
         }
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            print(data)
             if let safeData = data {
                 if (parseResponse(for: safeData) == 200) {
                     delegate?.didConnectSuccessfully()
